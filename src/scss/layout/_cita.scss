@@ -1,0 +1,43 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.section {
+  padding: 5rem 0;
+  display: none;
+  min-height: 50vh;
+
+  .text-center {
+    text-align: center;
+  }
+
+  &.show {
+    display: block;
+  }
+
+  &.hide {
+    display: none;
+  }
+}
+
+.barra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: v.$bold;
+    font-size: 3rem;
+  }
+
+  .boton {
+    @include m.boton(v.$negro, v.$blanco);
+
+    &:hover {
+      @include m.boton(v.$blanco, v.$negro)
+    }
+
+    transition: all 600ms ease;
+  }
+}
